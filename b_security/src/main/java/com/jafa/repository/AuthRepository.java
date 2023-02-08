@@ -6,5 +6,4 @@ public interface AuthRepository {
 	void save(AuthVO vo);
 
 	void remove(String memberId);
-
 }

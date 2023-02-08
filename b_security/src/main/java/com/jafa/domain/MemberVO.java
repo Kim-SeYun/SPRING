@@ -9,19 +9,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@ToString
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Builder
 public class MemberVO {
-	private Long mno;
-	private String memberId;
-	private String password;
-	private String email;
-	private boolean enabled;
+	private Long mno; 
+	private String memberId; 
+	private String password; 
+	private String email; 
+	private boolean enabled; 
 	private List<AuthVO> authList;
-	
-
 }

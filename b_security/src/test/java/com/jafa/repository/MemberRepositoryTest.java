@@ -16,19 +16,19 @@ import lombok.extern.log4j.Log4j;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"classpath:spring-config/root-context.xml",
-		"classpath:spring-config/servlet-context.xml",
-		"classpath:spring-config/security-context.xml"
+		"classpath:spring-config/security-context.xml",
+		"classpath:spring-config/servlet-context.xml"
 })
 @WebAppConfiguration
 @Log4j
 public class MemberRepositoryTest {
 
 	@Autowired
-	MemberRepository memberRepository;
+	MemberRepository memberRepository; 
 	
 	@Test
 	public void test() {
-		MemberVO read = memberRepository.read("mimi");
+		MemberVO read = memberRepository.read("leekwanghyup");
 		log.info(read);
 	}
 

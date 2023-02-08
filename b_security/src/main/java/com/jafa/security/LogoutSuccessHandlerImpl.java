@@ -14,7 +14,7 @@ public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler{
 	@Override
 	public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
 			throws IOException, ServletException {
-		// 로그아웃 시 부가적인 처리 작업
+		// 로그아웃 시 부가적인 처리 작업 
 		// ex) 마지막 로그아웃 시간 기록
 		response.sendRedirect(request.getContextPath());
 	}

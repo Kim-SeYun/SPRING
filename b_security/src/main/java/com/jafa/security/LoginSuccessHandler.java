@@ -12,7 +12,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class LoginSucessHandler implements AuthenticationSuccessHandler{
+public class LoginSuccessHandler implements AuthenticationSuccessHandler{
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

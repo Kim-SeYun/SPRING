@@ -82,11 +82,13 @@ public class MemberController {
 	public String updateMemberType(AuthListDTO authListDTO, RedirectAttributes rttr) {
 		List<AuthVO> authList = authListDTO.getAuthList();
 		for(AuthVO vo : authList) {
-			if(vo.getMemberId()!=null && vo.getMemberType()!=null) {
+			if(vo.getMemberId()!=null && vo.getMemberType()!= null) {
 				memberService.updateMemberType(vo);
 			}
 		}
 		rttr.addFlashAttribute("updateMember", "등급변경");
 		return "redirect:/member/admin";
 	}
+	
+	
 }

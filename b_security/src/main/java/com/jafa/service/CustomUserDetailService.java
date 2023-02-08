@@ -13,7 +13,7 @@ public class CustomUserDetailService implements UserDetailsService{
 	
 	@Autowired
 	private MemberRepository memberRepository;
-
+	
 	@Override
 	public UserDetails loadUserByUsername(String memberId) throws UsernameNotFoundException {
 		MemberVO vo = memberRepository.read(memberId);
@@ -22,5 +22,4 @@ public class CustomUserDetailService implements UserDetailsService{
 		}
 		return new MemberDetail(vo);
 	}
-
 }

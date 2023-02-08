@@ -17,13 +17,13 @@ import com.jafa.repository.MemberRepository;
 public class MemberService {
 	
 	@Autowired
-	MemberRepository memberRepository;
+	MemberRepository memberRepository; 
 	
 	@Autowired
 	AuthRepository authRepository;
 	
 	@Autowired
-	PasswordEncoder passwordEncoder;
+	PasswordEncoder passwordEncoder;	
 	
 	// 회원가입
 	@Transactional
@@ -38,7 +38,7 @@ public class MemberService {
 		authRepository.save(authVO);
 	}
 	
-	// 회원 등급변경
+	// 회원 등급 변경
 	@Transactional
 	public void updateMemberType(AuthVO authVO) {
 		authRepository.remove(authVO.getMemberId()); // 모든 등급 삭제
@@ -46,17 +46,18 @@ public class MemberService {
 		MemberType[] types = MemberType.values(); // 전체 회원등급
 		for(int i=memberType.ordinal(); i<types.length; i++) {
 			AuthVO vo = AuthVO.builder()
-					.memberId(authVO.getMemberId())
-					.memberType(types[i])
-					.ordinal(types[i].ordinal())
-					.build();
+				.memberId(authVO.getMemberId())
+				.memberType(types[i])
+				.ordinal(types[i].ordinal())
+				.build();
 			authRepository.save(vo);
 		}
+		
 	}
 
-	// 회원목록 조회
+	// 회원 목록 조회
 	public List<MemberVO> memberList() {
+		
 		return memberRepository.memberList();
 	}
-
 }
